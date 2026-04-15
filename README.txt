@@ -34,7 +34,7 @@ Nesta seção, descrevemos o cenário de atuação e a modelagem do agente intel
 | **Performance (P)** | Diminuição do tempo médio de entrega, queda da taxa de atrasos e alta acurácia na previsão de falhas na frota ou demanda de estoque. |
 | **Ambiente (E)** | Malha rodoviária de entregas, frotas de veículos e centros de distribuição conectados. |
 | **Atuadores (A)** | Redefinir rotas no grafo de transporte, emitir alertas de falha, acionar LLM para relatórios de anomalias e atualizar ordens de estoque. |
-| **Sensores (S)** | Telemetria do veículo (simulando sensores do rover), volume de pedidos (ERP), e APIs de trânsito. |
+| **Sensores (S)** | Telemetria do veículo (Temperatura do Motor, Nível de Bateria e Vibração do Chassi), volume de pedidos (ERP), e APIs de trânsito. |
 
 ---
 
@@ -46,7 +46,7 @@ A inteligência do agente integra as competências desenvolvidas ao longo do sem
     1. **Árvores de Decisão (`scikit-learn`):** Utilizadas para classificar a "saúde" e segurança do veículo em rota, prevendo falhas críticas com base em dados de sensores.
     2. **Redes Neurais (`tensorflow/keras`):** Implementadas para identificar padrões ocultos no histórico do ERP e prever gargalos de demanda ou probabilidade de atrasos.
     3. **Teoria dos Grafos (`networkx`):** Modela a base de conhecimento geográfico e logístico, onde os "Nós" são as cidades/CDs e as "Arestas" são os custos/tempo de transporte, permitindo cálculos de rota otimizada.
-    4. **LLM (`google.generativeai`):** O modelo atuará como um "co-piloto" gerando relatórios interpretativos automáticos caso a rede neural identifique anomalias severas na demanda.
+    4. **LLM (`google.generativeai`):** O modelo atuará como um "co-piloto", recebendo os diagnósticos do Sistema Especialista (Árvore de Decisão) para gerar relatórios operacionais interpretativos e sugerir ações corretivas imediatas sobre a saúde da frota de AGVs.
 
 ---
 
@@ -71,3 +71,4 @@ A inteligência do agente integra as competências desenvolvidas ao longo do sem
 2. Instale as dependências:
    ```bash
    pip install -r requirements.txt
+3. Configure sua chave de API do Gemini adicionando um segredo chamado GOOGLE_API_KEY na aba "Secrets" (🔑) do Google Colab antes de executar as células de Integração com LLM.
