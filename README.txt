@@ -36,6 +36,21 @@ Nesta seção, descrevemos o cenário de atuação e a modelagem do agente intel
 | **Atuadores (A)** | Redefinir rotas no grafo de transporte, emitir alertas de falha, acionar LLM para relatórios de anomalias e atualizar ordens de estoque. |
 | **Sensores (S)** | Telemetria do veículo (Temperatura do Motor, Nível de Bateria e Vibração do Chassi), volume de pedidos (ERP), e APIs de trânsito. |
 
+## Inteligência Evolutiva e Predição
+
+### Abordagem Escolhida: Redes Neurais Artificiais (RNA)
+Optamos por implementar uma **Rede Neural Artificial (RNA)** utilizando `TensorFlow/Keras`. 
+* **Por quê?** Enquanto o sistema da Etapa 2 diagnosticava o status atual de forma binária (Falha/Saudável), a RNA consegue identificar padrões não lineares complexos entre a temperatura do motor, nível de bateria e vibração do chassi. Isso gera uma *probabilidade contínua de falha*, funcionando como um sistema de aviso prévio (early-warning system). Com essa previsão, podemos aplicar lógicas graduais aos atuadores (como reduzir a velocidade em 50% em vez de uma parada brusca), mitigando o desgaste antes da falha crítica acontecer.
+
+### Métricas de Desempenho
+O modelo demonstrou aprendizado consistente ao longo de 50 *epochs*. A curva de `Loss` apresentou queda logarítmica até estabilizar próxima de 0, enquanto a curva de `Accuracy` atingiu excelente capacidade de generalização tanto nos dados de treino quanto de validação.
+*(Insira aqui a imagem/print dos gráficos de Loss e Accuracy gerados no Colab)*
+
+### Como executar
+1. Abra o arquivo `.ipynb` localizado na pasta `/notebooks` via Google Colab.
+2. Certifique-se de que a biblioteca `tensorflow` está instalada (presente no `requirements.txt`).
+3. Adicione sua `GOOGLE_API_KEY` na aba de Secrets do Colab.
+4. Execute todas as células ("Run all"). O script treinará a RNA, plotará os gráficos de desempenho e consultará a API do Gemini automaticamente com a previsão atualizada do atuador.
 ---
 
 ### 4. Arquitetura de Dados e IA
