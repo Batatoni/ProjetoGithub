@@ -13,28 +13,28 @@
 ---
 
 ### 2. Área Problema Selecionada
-Selecione a trilha tecnológica do projeto (marque com um [x]):
-* [ ] **Saúde 4.0:** Robótica Assistiva (Controladores Inteligentes/Fuzzy)
-* [ ] **Smart Grid:** Eficiência Energética e Descarbonização
-* [ ] **Agtech:** Automação de Precisão e Visão Computacional
-* [x] **Logística Autônoma:** Coordenação de AGVs e Otimização de Rotas
+Área Selecionada: Logística Autônoma: Coordenação de AGVs e Otimização de Rotas.
+Contexto: Gestão de Cadeia de Suprimentos (Supply Chain) e Transporte Logístico.  
+Problema: Ineficiência na gestão das entregas e estoques, causada por rotas subotimizadas e desequilíbrio (falta ou excesso) de produtos armazenados.  
+Impacto: Redução de custos operacionais, diminuição do tempo de entregas e mitigação de problemas de ruptura de estoque.s
 
----
-
-### 3. Diagnóstico e Definição do Agente
-Nesta seção, descrevemos o cenário de atuação e a modelagem do agente inteligente.
-
-* **Contexto:** Gestão de Cadeia de Suprimentos (Supply Chain) e Transporte Logístico.
-* **Problema:** Ineficiência na gestão das entregas e estoques, causada por rotas subotimizadas e desequilíbrio (falta ou excesso) de produtos armazenados.
-* **Impacto:** Redução de custos operacionais, diminuição do tempo de entregas e mitigação de problemas de ruptura de estoque.
-
-#### Modelagem PEAS (Agente Inteligente)
+#### Modelagem PEAS
 | Componente | Descrição |
 | :--- | :--- |
 | **Performance (P)** | Diminuição do tempo médio de entrega, queda da taxa de atrasos e alta acurácia na previsão de falhas na frota ou demanda de estoque. |
 | **Ambiente (E)** | Malha rodoviária de entregas, frotas de veículos e centros de distribuição conectados. |
 | **Atuadores (A)** | Redefinir rotas no grafo de transporte, emitir alertas de falha, acionar LLM para relatórios de anomalias e atualizar ordens de estoque. |
 | **Sensores (S)** | Telemetria do veículo (Temperatura do Motor, Nível de Bateria e Vibração do Chassi), volume de pedidos (ERP), e APIs de trânsito. |
+---
+
+### 3. Arquitetura Lógica e Aprendizado
+O SmartLog  opera através de uma arquitetura híbrida que garante segurança técnica e clareza para o usuário:  
+
+Módulo Preditivo (Etapa 3): Utiliza uma Rede Neural Artificial (RNA) para identificar padrões não lineares complexos e gerar uma probabilidade contínua de falha, atuando como um sistema de aviso prévio.
+  
+Módulo de Controle (Etapa 2): Um Sistema Especialista (Árvore de Decisão) classifica o risco com base na telemetria do veículo, que inclui a Temperatura do Motor, o Nível de Bateria e a Vibração do Chassi.
+  
+Camada Interpretativa: A API do Gemini recebe os outputs técnicos e gera uma explicação humanizada, sugerindo ações corretivas imediatas sobre a saúde da frota. 
 
 ## Inteligência Evolutiva e Predição
 
@@ -46,11 +46,6 @@ Optamos por implementar uma **Rede Neural Artificial (RNA)** utilizando `TensorF
 O modelo demonstrou aprendizado consistente ao longo de 50 *epochs*. A curva de `Loss` apresentou queda logarítmica até estabilizar próxima de 0, enquanto a curva de `Accuracy` atingiu excelente capacidade de generalização tanto nos dados de treino quanto de validação.
 *(Insira aqui a imagem/print dos gráficos de Loss e Accuracy gerados no Colab)*
 
-### Como executar
-1. Abra o arquivo `.ipynb` localizado na pasta `/notebooks` via Google Colab.
-2. Certifique-se de que a biblioteca `tensorflow` está instalada (presente no `requirements.txt`).
-3. Adicione sua `GOOGLE_API_KEY` na aba de Secrets do Colab.
-4. Execute todas as células ("Run all"). O script treinará a RNA, plotará os gráficos de desempenho e consultará a API do Gemini automaticamente com a previsão atualizada do atuador.
 ---
 
 ### 4. Arquitetura de Dados e IA
@@ -79,11 +74,11 @@ A inteligência do agente integra as competências desenvolvidas ao longo do sem
 * `requirements.txt`: Dependências do ambiente.
 * `README.md`: Documentação atual do projeto.
 
+
 ---
 
 ### 7. Instruções para Execução
-1. Clone este repositório.
-2. Instale as dependências:
-   ```bash
-   pip install -r requirements.txt
-3. Configure sua chave de API do Gemini adicionando um segredo chamado GOOGLE_API_KEY na aba "Secrets" (🔑) do Google Colab antes de executar as células de Integração com LLM.
+1. Abra o arquivo `.ipynb` localizado na pasta `/notebooks` via Google Colab.
+2. Certifique-se de que a biblioteca `tensorflow` está instalada (presente no `requirements.txt`).
+3. Adicione sua `GOOGLE_API_KEY` na aba de Secrets do Colab.
+4. Execute todas as células ("Run all"). O script treinará a RNA, plotará os gráficos de desempenho e consultará a API do Gemini automaticamente com a previsão atualizada do atuador.
