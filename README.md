@@ -147,6 +147,26 @@ A API Gemini atua como camada interpretativa e humanizada do sistema.
 
 ---
 
+## 🔹 4. Requisitos do Sistema
+
+Para garantir a eficiência e a aplicabilidade da solução no mundo real, o **SmartLog IA** foi desenvolvido atendendo ao seguinte mapeamento de requisitos:
+
+### 📌 Requisitos Funcionais
+*(O que o sistema deve fazer)*
+
+1. **Monitoramento e Classificação:** O sistema deve classificar o status operacional e prever a probabilidade de falha do AGV em tempo real, baseando-se nos dados de telemetria (temperatura do motor, bateria e vibração do chassi).
+2. **Atuação Autônoma:** O sistema deve determinar e acionar comandos virtuais automaticamente (ex: redução de velocidade, parada emergencial) com base no nível de criticidade previsto pela Rede Neural.
+3. **Geração de Relatórios (LLM):** O sistema deve consumir a API do Gemini para gerar relatórios operacionais automáticos em linguagem natural, traduzindo as anomalias dos sensores em planos de ação claros para a central de controle.
+4. **Visualização de Métricas:** O sistema deve gerar gráficos de evolução do aprendizado de máquina (*Loss* e *Accuracy*) para validação do desempenho do modelo preditivo.
+
+### ⚙️ Requisitos Não-Funcionais
+*(Como o sistema deve se comportar / Restrições técnicas)*
+
+1. **Desempenho e Latência:** O tempo de inferência e resposta para a geração do relatório via API do Gemini não deve ultrapassar 5 segundos, garantindo agilidade na tomada de decisão da central.
+2. **Tolerância a Falhas:** O sistema deve possuir protocolos de contingência e tratamento de exceções (blocos *Try/Catch*). Caso a API do Gemini fique indisponível, o sistema deve manter a ação do atuador e emitir um alerta padrão de segurança.
+3. **Confiabilidade:** O modelo de Rede Neural Artificial deve manter uma acurácia de validação superior a 90% para evitar falsos positivos que parem a operação logística desnecessariamente.
+4. **Escalabilidade (Arquitetura):** O código deve ser modularizado de forma que o núcleo inteligente permita fácil integração futura com hardwares reais (sensores IoT de AGVs) e APIs de dashboards web.
+
 # 🏗️ Arquitetura do Sistema
 
 ```text
