@@ -73,21 +73,7 @@ A curva de Loss apresentou queda logarítmica até estabilizar próxima de 0, en
 Imagem 2: Log de Execução e Relatório do Gemini Link da IMG(https://postimg.cc/LY6PmThw)
 O modelo atua como um "co-piloto", recebendo os diagnósticos do Sistema Especialista para gerar relatórios operacionais interpretativos e sugerir ações corretivas imediatas.   
 
-7. Estrutura do Repositório
-
-/assets/images: Prints de gráficos, logs e diagramas.
-
-/data: Datasets de treino para o modelo preditivo e estrutura dos grafos logísticos.   
-
-/notebooks: Arquivos .ipynb contendo a avaliação de performance (acurácia/loss) e plotagem das rotas.   
-
-/scripts: Lógica central do agente (Agente Roteador + Agente Previsor).   
-
-requirements.txt: Dependências do ambiente.   
-
-README.md: Documentação atual do projeto.   
-
-8. Instruções para Execução
+7. Instruções para Execução
 Clone o repositório: git clone [https://github.com/Batatoni/ProjetoGithub]
 
 Instale as dependências presentes no arquivo de requisitos:   
@@ -100,7 +86,7 @@ Importante: Adicione sua GOOGLE_API_KEY na aba de Secrets do Colab para habilita
 
 Execute todas as células ("Run all"). O script treinará a RNA, plotará os gráficos de desempenho e consultará a API do Gemini automaticamente.   
 
-🤖 9. Apêndice de IA
+🤖 8. Apêndice de IA
 Relato sobre o suporte de ferramentas de Inteligência Artificial Generativa no desenvolvimento:
 
 Ferramentas: Gemini 1.5 Flash / Gemini Advanced.
