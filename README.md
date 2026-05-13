@@ -235,8 +235,8 @@ A arquitetura permite futura integração com:
 
 A curva de *Loss* apresentou redução progressiva até estabilização próxima de zero, enquanto a curva de *Accuracy* demonstrou excelente capacidade de generalização.
 
-Link da imagem:
-https://postimg.cc/RWKKdhj8
+<img src="https://postimg.cc/RWKKdhj8" width="600">
+
 
 ---
 
