@@ -236,6 +236,7 @@ A arquitetura permite futura integração com:
 A curva de *Loss* apresentou redução progressiva até estabilização próxima de zero, enquanto a curva de *Accuracy* demonstrou excelente capacidade de generalização.
 
 <img src="https://postimg.cc/RWKKdhj8" width="600">
+![Gráfico de Desempenho da Rede Neural](https://postimg.cc/LY6PmThw)
 
 
 ---
@@ -244,8 +245,21 @@ A curva de *Loss* apresentou redução progressiva até estabilização próxima
 
 O sistema atua como um “co-piloto inteligente”, interpretando diagnósticos técnicos e sugerindo ações corretivas automaticamente.
 
-Link da imagem:
-https://postimg.cc/LY6PmThw
+--- Performance do Modelo ---
+Acurácia da Árvore de Decisão: 99.50%
+
+--- Diagnóstico Operacional ---
+Leitura -> Temp: 108.5°C | Bat: 22.0% | Vib: 5.8Hz
+Decisão: Alerta: Falha Crítica Iminente
+
+--- Comparação de Modelos ---
+Decisão da Árvore (Etapa 2): Alerta: Falha Crítica Iminente
+Probabilidade RNA (Etapa 3): 100.00% de chance de falha crítica.
+
+Status do Atuador: ATUADOR ACIONADO: Desligamento emergencial do motor e freio travado.
+
+--- Relatório Preditivo (Gemini API) ---
+O modelo preditivo do SmartLog, com sua nova Rede Neural, demonstrou ser fundamental ao prever uma probabilidade de falha de 100.00% no AGV com base na telemetria crítica de Temperatura (108.5°C) e Vibração (5.8Hz). Essa detecção precoce e inequívoca permitiu que o sistema agisse proativamente, evitando uma quebra catastrófica que resultaria em danos extensos ao AGV, interrupções operacionais significativas e potenciais riscos de segurança. A ação do atuador de desligamento emergencial do motor e freio travado foi absolutamente adequada e crucial, pois, diante de uma certeza de falha tão elevada, essa intervenção imediata transformou uma potencial falha descontrolada em uma parada gerenciada, minimizando danos adicionais, garantindo a segurança e permitindo uma intervenção de manutenção planejada em vez de uma resposta a um colapso total do equipamento.
 
 ---
 
