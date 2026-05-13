@@ -283,12 +283,15 @@ A solução conseguiu identificar padrões relevantes de comportamento da frota 
 ```text
 📦 SmartLog-IA
  ┣ 📂 assets
- ┃ ┗ 📂 images
+ ┃ ┗ 📂 images            # Gráficos de aprendizado (Loss/Accuracy) e evidências da API
  ┣ 📂 data
+ ┃ ┗ 📄 dataset           # Conjunto de dados simulado de telemetria dos AGVs
+ ┣ 📂 notebooks
+ ┃ ┗ 📄 Colab__SmartLog.ipynb # Pipeline contínuo: Treinamento, Inferência e Integração LLM
  ┣ 📂 scripts
- ┣ 📄 Colab.ipynb
- ┣ 📄 requirements.txt
- ┣ 📄 README.md
+ ┃ ┗ 📄 agente_previsor.py    # Módulo autônomo com a lógica da Rede Neural
+ ┣ 📄 Requirements.txt        # Dependências do projeto (TensorFlow, Scikit-Learn, Google Generative AI)
+ ┣ 📄 README.md               # Documentação principal
 ```
 
 ---
