@@ -1,21 +1,18 @@
-# --- Manipulação e Análise de Dados ---
-numpy>=1.24.0
-pandas>=2.0.0
+# Core Data & ML
+pandas>=2.2.2
+numpy>=2.0.2
+scikit-learn>=1.6.1
+tensorflow>=2.15.0
+scipy>=1.16.3
 
-# --- Visualização de Dados e Gráficos ---
+# Visualization
 matplotlib>=3.7.0
-seaborn>=0.12.0
 
-# --- Machine Learning (Semana 02 e 04) ---
-scikit-learn>=1.2.0
-tensorflow>=2.12.0
+# AI & Generative logic
+google-generativeai>=0.8.6
 
-# --- Grafos e Representação de Conhecimento (Semana 07) ---
-networkx>=3.1
+# Routing & Graphs
+networkx>=3.0
 
-# --- Integração com LLMs (Semana 07) ---
-google-generativeai>=0.4.0
-
-# --- Ferramentas de Desenvolvimento ---
-jupyter>=1.0.0
-ipykernel
+# Utils
+joblib>=1.2.0
