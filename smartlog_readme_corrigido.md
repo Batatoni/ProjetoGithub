@@ -165,23 +165,7 @@ A API Gemini atua como camada interpretativa e humanizada do sistema.
 
 # 🏗️ Arquitetura do Sistema
 
-```text
-Entrada de Dados
-        ↓
-Pré-processamento
-        ↓
-Rede Neural Artificial
-        ↓
-Previsão de Falhas
-        ↓
-Sistema Especialista
-(Classificação de Risco)
-        ↓
-Gemini API
-(Relatório Inteligente)
-        ↓
-Alertas e Recomendações
-```
+![Fluxograma do Sistema](assets/image/fluxograma.png)
 
 ---
 
@@ -204,10 +188,6 @@ A curva de *Loss* apresentou redução progressiva até estabilização próxima
 ### 📉 Gráfico de Loss da RNA
 
 ![Evolução do Erro (Loss) da RNA](assets/image/image_2026-05-12_212356852.png)
-
-### 🏗️ Fluxograma do Sistema
-
-![Fluxograma do Sistema](assets/images/fluxograma_smartlog.png)
 
 ---
 
