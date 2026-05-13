@@ -12,7 +12,9 @@ Athur Salum - RA: 062220004
 Felipe Queiroz - RA: 062220020   
 Thiago Frias - RA: 062220001   
 Vitor Toni - RA: 062220029   
-
+-----------------------------------------------------|
+Link do Video do Pitch: https://youtu.be/GLkxSc0qg3U |
+-----------------------------------------------------|
 2. Área Problema Selecionada
 Selecione a trilha tecnológica do projeto (marque com um [x]):
 
