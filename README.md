@@ -260,8 +260,9 @@ A solução conseguiu identificar padrões relevantes de comportamento da frota 
 📦 SmartLog-IA
  ┣ 📂 assets
  ┃ ┗ 📂 images
- ┣ 📂 notebooks
+ ┣ 📂 data
  ┣ 📂 scripts
+ ┣ 📄 Colab.ipynb
  ┣ 📄 requirements.txt
  ┣ 📄 README.md
 ```
