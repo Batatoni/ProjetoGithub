@@ -199,11 +199,11 @@ A curva de *Loss* apresentou redução progressiva até estabilização próxima
 
 ### 📊 Gráfico de Acurácia da RNA
 
-![Evolução da Acurácia da RNA](assets/images/grafico_acuracia.png)
+![Evolução da Acurácia da RNA](assets/image/image_2026-05-12_212350316.png)
 
 ### 📉 Gráfico de Loss da RNA
 
-![Evolução do Erro (Loss) da RNA](assets/images/grafico_loss.png)
+![Evolução do Erro (Loss) da RNA](assets/image/image_2026-05-12_212356852.png)
 
 ### 🏗️ Fluxograma do Sistema
 
