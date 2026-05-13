@@ -17,6 +17,10 @@
 
 https://youtu.be/GLkxSc0qg3U
 
+## Prototipo do projeto demonstrada
+
+https://ai.studio/apps/eb78c63e-c7c1-444d-a6bc-172e795ab2b8
+
 ---
 
 # 📌 1. Identificação do Grupo
