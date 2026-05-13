@@ -1,0 +1,9 @@
+Estrutura do Dataset: O modelo utiliza 1.000 amostras com as seguintes colunas:
+
+Temperatura_Motor: Média de 80°C (saudável) vs 110°C (falha).
+
+Nivel_Bateria: 40-100% (saudável) vs 5-50% (falha).
+
+Vibracao_Chassi: ~2.5Hz (saudável) vs ~6.5Hz (falha).
+
+Status_Falha: Alvo binário (0 ou 1).
