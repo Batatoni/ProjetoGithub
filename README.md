@@ -17,7 +17,7 @@
 
 https://youtu.be/GLkxSc0qg3U
 
-## Prototipo do projeto demonstrada
+## Protótipo do projeto demonstrado
 
 https://ai.studio/apps/eb78c63e-c7c1-444d-a6bc-172e795ab2b8
 
@@ -149,43 +149,23 @@ A API Gemini atua como camada interpretativa e humanizada do sistema.
 
 ## 🔹 4. Requisitos do Sistema
 
-Para garantir a eficiência e a aplicabilidade da solução no mundo real, o **SmartLog IA** foi desenvolvido atendendo ao seguinte mapeamento de requisitos:
-
 ### 📌 Requisitos Funcionais
-*(O que o sistema deve fazer)*
 
-1. **Monitoramento e Classificação:** O sistema deve classificar o status operacional e prever a probabilidade de falha do AGV em tempo real, baseando-se nos dados de telemetria (temperatura do motor, bateria e vibração do chassi).
-2. **Atuação Autônoma:** O sistema deve determinar e acionar comandos virtuais automaticamente (ex: redução de velocidade, parada emergencial) com base no nível de criticidade previsto pela Rede Neural.
-3. **Geração de Relatórios (LLM):** O sistema deve consumir a API do Gemini para gerar relatórios operacionais automáticos em linguagem natural, traduzindo as anomalias dos sensores em planos de ação claros para a central de controle.
-4. **Visualização de Métricas:** O sistema deve gerar gráficos de evolução do aprendizado de máquina (*Loss* e *Accuracy*) para validação do desempenho do modelo preditivo.
+1. **Monitoramento e Classificação:** O sistema deve classificar o status operacional e prever a probabilidade de falha do AGV em tempo real.
+2. **Atuação Autônoma:** O sistema deve determinar e acionar comandos virtuais automaticamente.
+3. **Geração de Relatórios (LLM):** O sistema deve consumir a API do Gemini para gerar relatórios operacionais automáticos.
+4. **Visualização de Métricas:** O sistema deve gerar gráficos de evolução do aprendizado de máquina.
 
 ### ⚙️ Requisitos Não-Funcionais
-*(Como o sistema deve se comportar / Restrições técnicas)*
 
-1. **Desempenho e Latência:** O tempo de inferência e resposta para a geração do relatório via API do Gemini não deve ultrapassar 5 segundos, garantindo agilidade na tomada de decisão da central.
-2. **Tolerância a Falhas:** O sistema deve possuir protocolos de contingência e tratamento de exceções (blocos *Try/Catch*). Caso a API do Gemini fique indisponível, o sistema deve manter a ação do atuador e emitir um alerta padrão de segurança.
-3. **Confiabilidade:** O modelo de Rede Neural Artificial deve manter uma acurácia de validação superior a 90% para evitar falsos positivos que parem a operação logística desnecessariamente.
-4. **Escalabilidade (Arquitetura):** O código deve ser modularizado de forma que o núcleo inteligente permita fácil integração futura com hardwares reais (sensores IoT de AGVs) e APIs de dashboards web.
+1. **Desempenho e Latência:** O tempo de resposta não deve ultrapassar 5 segundos.
+2. **Tolerância a Falhas:** O sistema deve possuir tratamento de exceções.
+3. **Confiabilidade:** O modelo deve manter acurácia superior a 90%.
+4. **Escalabilidade:** O código deve ser modularizado para integração futura.
 
 # 🏗️ Arquitetura do Sistema
 
-```text
-Entrada de Dados
-        ↓
-Pré-processamento
-        ↓
-Rede Neural Artificial
-        ↓
-Previsão de Falhas
-        ↓
-Sistema Especialista
-(Classificação de Risco)
-        ↓
-Gemini API
-(Relatório Inteligente)
-        ↓
-Alertas e Recomendações
-```
+![Fluxograma do Sistema](assets/image/fluxograma.png)
 
 ---
 
@@ -195,49 +175,19 @@ A abordagem escolhida para o núcleo inteligente do projeto foi a utilização d
 
 ---
 
-## 🔹 Natureza do Problema
-
-O gerenciamento logístico envolve padrões complexos e não lineares, dificultando o uso de métodos tradicionais para previsão operacional.
-
-A RNA permite identificar relações entre múltiplas variáveis simultaneamente.
-
----
-
-## 🔹 Capacidade de Predição
-
-A RNA foi escolhida pela capacidade de prever falhas futuras antes que ocorram, funcionando como um sistema de aviso prévio inteligente.
-
-Isso permite ações graduais como:
-
-- Redução preventiva da velocidade;
-- Replanejamento de rotas;
-- Redução de desgaste operacional;
-- Prevenção de paradas bruscas.
-
----
-
-## 🔹 Escalabilidade
-
-A arquitetura permite futura integração com:
-
-- IoT;
-- Sensores reais;
-- Dashboards Web;
-- Sistemas ERP;
-- AGVs;
-- Monitoramento em tempo real.
-
----
-
 # 📊 7. Evidências Visuais e Desempenho
 
 ## 📉 Gráficos de Desempenho da Rede Neural
 
 A curva de *Loss* apresentou redução progressiva até estabilização próxima de zero, enquanto a curva de *Accuracy* demonstrou excelente capacidade de generalização.
 
-<img src="https://postimg.cc/RWKKdhj8" width="600">
-![Gráfico de Desempenho da Rede Neural](https://postimg.cc/LY6PmThw)
+### 📊 Gráfico de Acurácia da RNA
 
+![Evolução da Acurácia da RNA](assets/image/image_2026-05-12_212350316.png)
+
+### 📉 Gráfico de Loss da RNA
+
+![Evolução do Erro (Loss) da RNA](assets/image/image_2026-05-12_212356852.png)
 
 ---
 
@@ -245,6 +195,7 @@ A curva de *Loss* apresentou redução progressiva até estabilização próxima
 
 O sistema atua como um “co-piloto inteligente”, interpretando diagnósticos técnicos e sugerindo ações corretivas automaticamente.
 
+```text
 --- Performance do Modelo ---
 Acurácia da Árvore de Decisão: 99.50%
 
@@ -259,7 +210,8 @@ Probabilidade RNA (Etapa 3): 100.00% de chance de falha crítica.
 Status do Atuador: ATUADOR ACIONADO: Desligamento emergencial do motor e freio travado.
 
 --- Relatório Preditivo (Gemini API) ---
-O modelo preditivo do SmartLog, com sua nova Rede Neural, demonstrou ser fundamental ao prever uma probabilidade de falha de 100.00% no AGV com base na telemetria crítica de Temperatura (108.5°C) e Vibração (5.8Hz). Essa detecção precoce e inequívoca permitiu que o sistema agisse proativamente, evitando uma quebra catastrófica que resultaria em danos extensos ao AGV, interrupções operacionais significativas e potenciais riscos de segurança. A ação do atuador de desligamento emergencial do motor e freio travado foi absolutamente adequada e crucial, pois, diante de uma certeza de falha tão elevada, essa intervenção imediata transformou uma potencial falha descontrolada em uma parada gerenciada, minimizando danos adicionais, garantindo a segurança e permitindo uma intervenção de manutenção planejada em vez de uma resposta a um colapso total do equipamento.
+O modelo preditivo do SmartLog, com sua nova Rede Neural, demonstrou ser fundamental ao prever uma probabilidade de falha de 100.00% no AGV com base na telemetria crítica de Temperatura (108.5°C) e Vibração (5.8Hz). Essa detecção precoce e inequívoca permitiu que o sistema agisse proativamente, evitando uma quebra catastrófica que resultaria em danos extensos ao AGV, interrupções operacionais significativas e potenciais riscos de segurança. A ação do atuador de desligamento emergencial do motor e freio travado foi absolutamente adequada e crucial, pois, diante de uma certeza de falha tão elevada, essa intervenção imediata transformou uma potencial falha descontrolada em uma parada gerenciada, minimizando danos adicionais, garantindo a segurança e permitindo uma intervenção de manutenção planejada.
+```
 
 ---
 
@@ -271,8 +223,6 @@ O modelo demonstrou:
 - Excelente capacidade de generalização;
 - Alta estabilidade operacional;
 - Boa precisão na previsão de falhas.
-
-A solução conseguiu identificar padrões relevantes de comportamento da frota e gerar respostas preventivas eficientes.
 
 ---
 
@@ -297,15 +247,15 @@ A solução conseguiu identificar padrões relevantes de comportamento da frota 
 ```text
 📦 SmartLog-IA
  ┣ 📂 assets
- ┃ ┗ 📂 images            # Gráficos de aprendizado (Loss/Accuracy) e evidências da API
+ ┃ ┗ 📂 images
  ┣ 📂 data
- ┃ ┗ 📄 dataset           # Conjunto de dados simulado de telemetria dos AGVs
+ ┃ ┗ 📄 dataset
  ┣ 📂 notebooks
- ┃ ┗ 📄 Colab__SmartLog.ipynb # Pipeline contínuo: Treinamento, Inferência e Integração LLM
+ ┃ ┗ 📄 Colab__SmartLog.ipynb
  ┣ 📂 scripts
- ┃ ┗ 📄 agente_previsor.py    # Módulo autônomo com a lógica da Rede Neural
- ┣ 📄 Requirements.txt        # Dependências do projeto (TensorFlow, Scikit-Learn, Google Generative AI)
- ┣ 📄 README.md               # Documentação principal
+ ┃ ┗ 📄 agente_previsor.py
+ ┣ 📄 Requirements.txt
+ ┣ 📄 README.md
 ```
 
 ---
@@ -318,46 +268,29 @@ A solução conseguiu identificar padrões relevantes de comportamento da frota 
 git clone https://github.com/Batatoni/ProjetoGithub
 ```
 
----
-
 ## 2. Instale as dependências
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
 ## 3. Abra o notebook principal
 
-Execute o arquivo `.ipynb` localizado na pasta `/notebooks` utilizando:
-
-- Google Colab;
-- Jupyter Notebook.
+Execute o arquivo `.ipynb` localizado na pasta `/notebooks`.
 
 ---
 
 ## ⚠️ Configuração da API Gemini
 
-Adicione sua `GOOGLE_API_KEY` na aba **Secrets** do Google Colab para habilitar a camada interpretativa do sistema.
+Adicione sua `GOOGLE_API_KEY` na aba **Secrets** do Google Colab.
 
 ---
 
 ## 4. Execute o projeto
 
-Selecione:
-
 ```text
 Run All
 ```
-
-O sistema irá:
-
-- Treinar a RNA;
-- Gerar gráficos;
-- Executar a classificação;
-- Consultar a API Gemini;
-- Gerar relatórios automáticos.
 
 ---
 
@@ -384,28 +317,10 @@ O sistema irá:
 
 ---
 
-## Aplicação da IA
-
-As ferramentas de IA auxiliaram em:
-
-- Modularização do código;
-- Aplicação de Clean Code;
-- Integração com grafos via NetworkX;
-- Estruturação da arquitetura do sistema;
-- Desenvolvimento do roteiro de apresentação.
-
----
-
-## Validação
-
-Todos os resultados, métricas e interpretações foram analisados e validados tecnicamente pelo grupo.
-
----
-
 # 📚 Instituição
 
-Centro Universitário da Fundação Santo André (FSA)
-Engenharia de Controle e Automação
+Centro Universitário da Fundação Santo André (FSA)  
+Engenharia de Controle e Automação  
 Projeto de Inteligência Artificial — 2026
 
 ---
